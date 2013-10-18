@@ -29,6 +29,7 @@ function legal_instrument_views_default_views() {
   );
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['query']['options']['distinct'] = TRUE;
   $handler->display->display_options['query']['options']['query_comment'] = FALSE;
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['exposed_form']['options']['reset_button'] = TRUE;
@@ -144,6 +145,16 @@ function legal_instrument_views_default_views() {
   $handler->display->display_options['menu']['weight'] = '3';
   $handler->display->display_options['menu']['name'] = 'main-menu';
   $handler->display->display_options['menu']['context'] = 0;
+
+  /* Display: Data export */
+  $handler = $view->new_display('views_data_export', 'Data export', 'legal_instrument_export');
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['style_plugin'] = 'views_data_export_xls';
+  $handler->display->display_options['style_options']['provide_file'] = 1;
+  $handler->display->display_options['style_options']['filename'] = 'CMS Instruments - %timestamp-yyyy%timestamp-mm%timestamp-dd.xls';
+  $handler->display->display_options['style_options']['parent_sort'] = 1;
+  $handler->display->display_options['path'] = 'legal_instrument/export';
   $translatables['legal_instrument_listing'] = array(
     t('Master'),
     t('CMS Instruments'),
@@ -156,6 +167,7 @@ function legal_instrument_views_default_views() {
     t('Instrument name'),
     t('Status'),
     t('Page'),
+    t('Data export'),
   );
   $export['legal_instrument_listing'] = $view;
 

@@ -187,7 +187,7 @@ class CMSLegalInstrument extends CMSBase {
             return $ret;
         }
 		// create node
-        $node = self::node_create($data['title'],$data['field_instrument_name'],1,'in force dummy text');
+        $node = self::node_create($data['title'],$data['field_instrument_name'],1,'');
 
         if (!empty($data['uuid'])) {
             $node->uuid = $data['uuid'];
@@ -215,6 +215,7 @@ class CMSLegalInstrument extends CMSBase {
         self::set_field_single_value($node, 'field_related_international_init', $data);
         self::set_field_single_value($node, 'field_working_groups', $data);
         self::set_field_single_value($node, 'field_member_of_blg', $data);
+        self::set_field_single_value($node, 'field_instrument_amendments', $data);
 
         self::set_content_taxonomic_fields($node, CMSLegalInstrument::$taxonomic_fields, $data);
 
@@ -372,29 +373,33 @@ class CMSLegalInstrument extends CMSBase {
         }
 
         $data = array();
-        foreach ($countries as $index => $country) {
-            foreach($country->field_country_instrument_status[$language] as $row) {
-                $fc_array = array();
-                $fc = entity_load('field_collection_item', array($row['value']));
-                reset($fc);
-                $fc = current($fc);
-                if ($fc->field_country_instrument[$country->language][0]['target_id'] == $nid) {
-                    $term = taxonomy_term_load($fc->field_country_status[$country->language][0]['tid']);
+        if (!empty($countries)) {
+            foreach ($countries as $index => $country) {
+                foreach($country->field_country_instrument_status[$language] as $row) {
+                    $fc_array = array();
+                    $fc = entity_load('field_collection_item', array($row['value']));
+                    reset($fc);
+                    $fc = current($fc);
+                    if ($fc->field_country_instrument[$country->language][0]['target_id'] == $nid) {
+                        $term = taxonomy_term_load($fc->field_country_status[$country->language][0]['tid']);
 
-                    if ($term) {
-                        $date = '';
-                        if (!empty($fc->field_country_ratification_date[$country->language][0]['value'])) {
-                            $date = format_date(strtotime($fc->field_country_ratification_date[$country->language][0]['value']) ,'custom','j F Y');
+                        if ($term) {
+                            $date = '';
+                            if (!empty($fc->field_country_ratification_date[$country->language][0]['value'])) {
+                                $date = format_date(strtotime($fc->field_country_ratification_date[$country->language][0]['value']) ,'custom','j F Y');
+                            }
+
+                            $notes = array_key_exists($country->language, $fc->field_country_notes) ? $fc->field_country_notes[$country->language][0]['value'] : '';
+
+                            $data[$term->name][] = array(
+                                'country' => $country->title,
+                                'status' => $term->name,
+                                'date' => $date,
+                                'notes' => $notes,
+                            );
                         }
 
-                        $data[$term->name][] = array(
-                            'country' => $country->title,
-                            'status' => $term->name,
-                            'date' => $date,
-                            'notes' => $fc->field_country_notes[$country->language][0]['value']
-                        );
                     }
-
                 }
             }
         }
