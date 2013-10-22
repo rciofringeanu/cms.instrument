@@ -8,8 +8,12 @@ include_once 'legal_instrument.features.inc';
 
 define('VOC_INSTRUMENT_TYPE', 'instrument_type');
 define('VOC_INSTRUMENT_STATUS', 'instrument_status');
+if (!defined('ROLE_MANAGE_PARTY')) {
+    define('ROLE_MANAGE_PARTY', 'manage party');
+}
+
 if (!defined('VOC_PARTY_STATUS')) {
-	define('VOC_PARTY_STATUS', 'party_status');
+    define('VOC_PARTY_STATUS', 'party_status');
 }
 
 
