@@ -7,7 +7,7 @@
 /**
  * Implements hook_strongarm().
  */
-function legal_instrument_strongarm() {
+function cms_instrument_strongarm() {
   $export = array();
 
   $strongarm = new stdClass();

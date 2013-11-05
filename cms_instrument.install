@@ -1,7 +1,7 @@
 <?php
 
 
-function legal_instrument_install() {
+function cms_instrument_install() {
     $role = CMSUtils::get_or_create_role(ROLE_MANAGE_PARTY);
 
     CMSUtils::vocabulary_create('Instrument type', VOC_INSTRUMENT_TYPE);

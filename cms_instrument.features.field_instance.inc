@@ -7,7 +7,7 @@
 /**
  * Implements hook_field_default_field_instances().
  */
-function legal_instrument_field_default_field_instances() {
+function cms_instrument_field_default_field_instances() {
   $field_instances = array();
 
   // Exported field_instance: 'node-legal_instrument-field_instrument_actual_effect'

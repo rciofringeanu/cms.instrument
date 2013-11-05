@@ -4,7 +4,7 @@
  * Code for the Legal instrument feature.
  */
 
-include_once 'legal_instrument.features.inc';
+include_once 'cms_instrument.features.inc';
 
 define('VOC_INSTRUMENT_TYPE', 'instrument_type');
 define('VOC_INSTRUMENT_STATUS', 'instrument_status');
@@ -17,7 +17,7 @@ if (!defined('VOC_PARTY_STATUS')) {
 }
 
 
-function legal_instrument_views_default_views_alter(&$views) {
+function cms_instrument_views_default_views_alter(&$views) {
     if (isset($views['legal_instrument_listing'])) {
         $handler = &$views['legal_instrument_listing'];
         $roles = user_roles();
@@ -36,7 +36,7 @@ function legal_instrument_views_default_views_alter(&$views) {
 /**
  * Implements hook_node_view();
 */
-function legal_instrument_node_view($node, $view_mode, $langcode) {
+function cms_instrument_node_view($node, $view_mode, $langcode) {
     if(function_exists('cms_theme_node_access') && $node->type == CMSLegalInstrument::$bundle) {
         cms_theme_node_access($node);
     }
@@ -67,7 +67,7 @@ function legal_instrument_node_view($node, $view_mode, $langcode) {
 /**
  * Implements hook_form_alter();
 */
-function legal_instrument_form_alter(&$form, &$form_state, $form_id) {
+function cms_instrument_form_alter(&$form, &$form_state, $form_id) {
     switch ($form_id) {
         case 'legal_instrument_node_form':
             $breadcrumb = array();

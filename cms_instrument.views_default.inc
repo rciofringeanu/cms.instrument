@@ -7,7 +7,7 @@
 /**
  * Implements hook_views_default_views().
  */
-function legal_instrument_views_default_views() {
+function cms_instrument_views_default_views() {
   $export = array();
 
   $view = new view();
