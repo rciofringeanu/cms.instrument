@@ -19,7 +19,7 @@ if (!defined('VOC_PARTY_STATUS')) {
 /**
  * Implements hook_menu_local_tasks_alter();
  *
- * Show 'Create species' button on Species listing view
+ * Show 'Create CMS Instrument' button on Species listing view
  *
  * @param   array   $data
  * @param   array   $router_item
