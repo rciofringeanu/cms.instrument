@@ -428,6 +428,7 @@ class CMSLegalInstrument extends CMSBase {
                             $notes = array_key_exists($country->language, $fc->field_country_notes) ? $fc->field_country_notes[$country->language][0]['value'] : '';
 
                             $data[$term->name][] = array(
+                                'nid' => $country->nid,
                                 'country' => $country->title,
                                 'status' => $term->name,
                                 'date' => $date,
