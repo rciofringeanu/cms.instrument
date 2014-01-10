@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * legal_instrument.views_default.inc
+ * cms_instrument.views_default.inc
  */
 
 /**
@@ -115,7 +115,21 @@ function cms_instrument_views_default_views() {
   $handler->display->display_options['style_options']['provide_file'] = 1;
   $handler->display->display_options['style_options']['filename'] = 'CMS Instruments - %timestamp-yyyy%timestamp-mm%timestamp-dd.xls';
   $handler->display->display_options['style_options']['parent_sort'] = 1;
-  $handler->display->display_options['path'] = 'legal_instrument/export';
+  $handler->display->display_options['path'] = 'manage/legal_instrument/export';
+  $translatables['legal_instrument_listing'] = array(
+    t('Master'),
+    t('CMS Instruments'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Instrument name'),
+    t('Status'),
+    t('Page'),
+    t('Data export'),
+  );
   $export['legal_instrument_listing'] = $view;
 
   return $export;
