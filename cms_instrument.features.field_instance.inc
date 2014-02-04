@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * legal_instrument.features.field_instance.inc
+ * cms_instrument.features.field_instance.inc
  */
 
 /**
@@ -23,7 +23,7 @@ function cms_instrument_field_default_field_instances() {
           'format' => 'cms_date',
         ),
         'type' => 'cms_date_formatter',
-        'weight' => 26,
+        'weight' => 16,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -56,7 +56,7 @@ function cms_instrument_field_default_field_instances() {
         'year_range' => '1970:+0',
       ),
       'type' => 'date_popup',
-      'weight' => 16,
+      'weight' => 15,
     ),
   );
 
@@ -73,7 +73,7 @@ function cms_instrument_field_default_field_instances() {
           'format' => 'cms_date',
         ),
         'type' => 'cms_date_formatter',
-        'weight' => 25,
+        'weight' => 15,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -125,7 +125,7 @@ function cms_instrument_field_default_field_instances() {
           'render_tr' => TRUE,
         ),
         'type' => 'cms_field_table_row_formatter',
-        'weight' => 35,
+        'weight' => 26,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -169,7 +169,7 @@ function cms_instrument_field_default_field_instances() {
           'render_tr' => TRUE,
         ),
         'type' => 'cms_field_table_row_formatter',
-        'weight' => 6,
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -214,7 +214,7 @@ function cms_instrument_field_default_field_instances() {
           'render_tr' => TRUE,
         ),
         'type' => 'cms_field_table_row_formatter',
-        'weight' => 18,
+        'weight' => 10,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -239,7 +239,7 @@ function cms_instrument_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 5,
+      'weight' => 6,
     ),
   );
 
@@ -258,7 +258,7 @@ function cms_instrument_field_default_field_instances() {
           'render_tr' => TRUE,
         ),
         'type' => 'cms_field_table_row_formatter',
-        'weight' => 5,
+        'weight' => 2,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -284,7 +284,7 @@ function cms_instrument_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 17,
+      'weight' => 16,
     ),
   );
 
@@ -303,7 +303,7 @@ function cms_instrument_field_default_field_instances() {
           'render_tr' => TRUE,
         ),
         'type' => 'cms_field_table_row_formatter',
-        'weight' => 19,
+        'weight' => 11,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -328,7 +328,7 @@ function cms_instrument_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 8,
+      'weight' => 9,
     ),
   );
 
@@ -347,7 +347,7 @@ function cms_instrument_field_default_field_instances() {
           'render_tr' => TRUE,
         ),
         'type' => 'cms_field_table_row_formatter',
-        'weight' => 28,
+        'weight' => 19,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -388,7 +388,7 @@ function cms_instrument_field_default_field_instances() {
         'module' => 'cms',
         'settings' => array(),
         'type' => 'cms_country_table_row_formatter',
-        'weight' => 7,
+        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -408,9 +408,11 @@ function cms_instrument_field_default_field_instances() {
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(),
+      'settings' => array(
+        'apply_chosen' => 0,
+      ),
       'type' => 'options_select',
-      'weight' => 4,
+      'weight' => 5,
     ),
   );
 
@@ -429,7 +431,7 @@ function cms_instrument_field_default_field_instances() {
           'render_tr' => TRUE,
         ),
         'type' => 'cms_field_table_row_formatter',
-        'weight' => 24,
+        'weight' => 14,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -454,7 +456,7 @@ function cms_instrument_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 15,
+      'weight' => 14,
     ),
   );
 
@@ -473,7 +475,7 @@ function cms_instrument_field_default_field_instances() {
           'render_tr' => TRUE,
         ),
         'type' => 'cms_field_table_row_formatter',
-        'weight' => 22,
+        'weight' => 13,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -498,7 +500,7 @@ function cms_instrument_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 10,
+      'weight' => 11,
     ),
   );
 
@@ -543,7 +545,7 @@ function cms_instrument_field_default_field_instances() {
         'size' => 44,
       ),
       'type' => 'text_textfield',
-      'weight' => 1,
+      'weight' => 2,
     ),
   );
 
@@ -562,7 +564,7 @@ function cms_instrument_field_default_field_instances() {
           'render_tr' => TRUE,
         ),
         'type' => 'cms_field_table_row_formatter',
-        'weight' => 31,
+        'weight' => 22,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -606,7 +608,7 @@ function cms_instrument_field_default_field_instances() {
           'render_tr' => TRUE,
         ),
         'type' => 'cms_field_table_row_formatter',
-        'weight' => 29,
+        'weight' => 20,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -650,7 +652,7 @@ function cms_instrument_field_default_field_instances() {
           'render_tr' => TRUE,
         ),
         'type' => 'cms_field_table_row_formatter',
-        'weight' => 27,
+        'weight' => 18,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -675,7 +677,7 @@ function cms_instrument_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 11,
+      'weight' => 12,
     ),
   );
 
@@ -694,7 +696,7 @@ function cms_instrument_field_default_field_instances() {
           'render_tr' => TRUE,
         ),
         'type' => 'cms_field_table_row_formatter',
-        'weight' => 20,
+        'weight' => 12,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -719,7 +721,7 @@ function cms_instrument_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 9,
+      'weight' => 10,
     ),
   );
 
@@ -738,7 +740,7 @@ function cms_instrument_field_default_field_instances() {
           'render_tr' => TRUE,
         ),
         'type' => 'cms_field_table_row_formatter',
-        'weight' => 30,
+        'weight' => 21,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -782,7 +784,7 @@ function cms_instrument_field_default_field_instances() {
           'render_tr' => 1,
         ),
         'type' => 'cms_term_reference_field_table_row_formatter',
-        'weight' => 16,
+        'weight' => 8,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -802,9 +804,11 @@ function cms_instrument_field_default_field_instances() {
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(),
+      'settings' => array(
+        'apply_chosen' => 0,
+      ),
       'type' => 'options_select',
-      'weight' => 3,
+      'weight' => 4,
     ),
   );
 
@@ -819,7 +823,7 @@ function cms_instrument_field_default_field_instances() {
         'module' => 'file',
         'settings' => array(),
         'type' => 'file_table',
-        'weight' => 15,
+        'weight' => 7,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -867,7 +871,7 @@ function cms_instrument_field_default_field_instances() {
           'render_tr' => TRUE,
         ),
         'type' => 'cms_term_reference_field_table_row_formatter',
-        'weight' => 17,
+        'weight' => 9,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -887,9 +891,66 @@ function cms_instrument_field_default_field_instances() {
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(),
+      'settings' => array(
+        'apply_chosen' => 0,
+      ),
       'type' => 'options_select',
-      'weight' => 2,
+      'weight' => 3,
+    ),
+  );
+
+  // Exported field_instance: 'node-legal_instrument-field_instrument_website'
+  $field_instances['node-legal_instrument-field_instrument_website'] = array(
+    'bundle' => 'legal_instrument',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'cms',
+        'settings' => array(),
+        'type' => 'cms_link_formatter',
+        'weight' => 17,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_instrument_website',
+    'label' => 'Website URL',
+    'required' => 0,
+    'settings' => array(
+      'attributes' => array(
+        'class' => '',
+        'configurable_title' => 0,
+        'rel' => '',
+        'target' => 'default',
+        'title' => '',
+      ),
+      'display' => array(
+        'url_cutoff' => 80,
+      ),
+      'enable_tokens' => 1,
+      'entity_translation_sync' => FALSE,
+      'rel_remove' => 'default',
+      'title' => 'none',
+      'title_maxlength' => 128,
+      'title_value' => '',
+      'url' => 0,
+      'user_register_form' => FALSE,
+      'validate_url' => 1,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'link',
+      'settings' => array(),
+      'type' => 'link_field',
+      'weight' => 17,
     ),
   );
 
@@ -908,7 +969,7 @@ function cms_instrument_field_default_field_instances() {
           'render_tr' => TRUE,
         ),
         'type' => 'cms_term_reference_field_table_row_formatter',
-        'weight' => 8,
+        'weight' => 5,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -928,9 +989,11 @@ function cms_instrument_field_default_field_instances() {
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(),
+      'settings' => array(
+        'apply_chosen' => 0,
+      ),
       'type' => 'options_select',
-      'weight' => 6,
+      'weight' => 7,
     ),
   );
 
@@ -949,7 +1012,7 @@ function cms_instrument_field_default_field_instances() {
           'render_tr' => TRUE,
         ),
         'type' => 'cms_field_table_row_formatter',
-        'weight' => 34,
+        'weight' => 25,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -993,7 +1056,7 @@ function cms_instrument_field_default_field_instances() {
           'render_tr' => TRUE,
         ),
         'type' => 'cms_field_table_row_formatter',
-        'weight' => 32,
+        'weight' => 23,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1034,7 +1097,7 @@ function cms_instrument_field_default_field_instances() {
         'module' => 'cms',
         'settings' => array(),
         'type' => 'cms_country_table_row_formatter',
-        'weight' => 9,
+        'weight' => 6,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1054,9 +1117,11 @@ function cms_instrument_field_default_field_instances() {
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(),
+      'settings' => array(
+        'apply_chosen' => 0,
+      ),
       'type' => 'options_select',
-      'weight' => 7,
+      'weight' => 8,
     ),
   );
 
@@ -1075,7 +1140,7 @@ function cms_instrument_field_default_field_instances() {
           'render_tr' => TRUE,
         ),
         'type' => 'cms_field_table_row_formatter',
-        'weight' => 33,
+        'weight' => 24,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1130,6 +1195,7 @@ function cms_instrument_field_default_field_instances() {
   t('Status');
   t('Treaty text');
   t('Type');
+  t('Website URL');
   t('Working groups');
 
   return $field_instances;

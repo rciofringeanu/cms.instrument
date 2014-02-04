@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * legal_instrument.features.inc
+ * cms_instrument.features.inc
  */
 
 /**
