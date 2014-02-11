@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * legal_instrument.strongarm.inc
+ * cms_instrument.strongarm.inc
  */
 
 /**

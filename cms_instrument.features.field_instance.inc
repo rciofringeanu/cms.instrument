@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * legal_instrument.features.field_instance.inc
+ * cms_instrument.features.field_instance.inc
  */
 
 /**
@@ -408,7 +408,9 @@ function cms_instrument_field_default_field_instances() {
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(),
+      'settings' => array(
+        'apply_chosen' => 0,
+      ),
       'type' => 'options_select',
       'weight' => 4,
     ),
@@ -802,7 +804,9 @@ function cms_instrument_field_default_field_instances() {
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(),
+      'settings' => array(
+        'apply_chosen' => 0,
+      ),
       'type' => 'options_select',
       'weight' => 3,
     ),
@@ -887,7 +891,9 @@ function cms_instrument_field_default_field_instances() {
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(),
+      'settings' => array(
+        'apply_chosen' => 0,
+      ),
       'type' => 'options_select',
       'weight' => 2,
     ),
@@ -928,7 +934,9 @@ function cms_instrument_field_default_field_instances() {
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(),
+      'settings' => array(
+        'apply_chosen' => 0,
+      ),
       'type' => 'options_select',
       'weight' => 6,
     ),
@@ -1054,7 +1062,9 @@ function cms_instrument_field_default_field_instances() {
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(),
+      'settings' => array(
+        'apply_chosen' => 0,
+      ),
       'type' => 'options_select',
       'weight' => 7,
     ),
