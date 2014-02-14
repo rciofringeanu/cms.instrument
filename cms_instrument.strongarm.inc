@@ -92,35 +92,50 @@ function cms_instrument_strongarm() {
         'title' => array(
           'weight' => '0',
         ),
+        'domain' => array(
+          'weight' => '1',
+        ),
+        'domain_path' => array(
+          'weight' => '29',
+        ),
+        'path' => array(
+          'weight' => '28',
+        ),
       ),
       'display' => array(
         'plans' => array(
           'default' => array(
-            'weight' => '100',
+            'weight' => '30',
             'visible' => TRUE,
           ),
         ),
         'meetings' => array(
           'default' => array(
-            'weight' => '100',
+            'weight' => '29',
             'visible' => TRUE,
           ),
         ),
         'projects' => array(
           'default' => array(
-            'weight' => '100',
+            'weight' => '31',
             'visible' => TRUE,
           ),
         ),
         'publications' => array(
           'default' => array(
-            'weight' => '100',
+            'weight' => '28',
             'visible' => TRUE,
           ),
         ),
         'species' => array(
           'default' => array(
-            'weight' => '100',
+            'weight' => '27',
+            'visible' => TRUE,
+          ),
+        ),
+        'domain' => array(
+          'default' => array(
+            'weight' => '1',
             'visible' => TRUE,
           ),
         ),

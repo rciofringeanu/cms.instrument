@@ -85,13 +85,58 @@ function cms_instrument_node_view($node, $view_mode, $langcode) {
             #unset($all_users['count']);
             #$node->contacts = $all_users;
 
-            $data = CMSLegalInstrument::list_countries_by_status($node->nid, $node->language);
-            $node->countries_by_status = $data;
+            //@TODO to remove if no problem detected
+            /*$data = CMSLegalInstrument::list_countries_by_status($node->nid, $node->language);
+            $node->countries_by_status = $data;*/
 
             $breadcrumb = array();
             $breadcrumb[] = l(t('Home'), '<front>');
             $breadcrumb[] = l(t('CMS Instruments'), ADMINISTRATION_PATH . 'legal_instrument/listing');
             drupal_set_breadcrumb($breadcrumb);
+
+            //count species
+            $view_species = views_get_view('species_admin');
+            $view_species->set_display('instrument_species');
+            $view_species->set_arguments(array($node->nid));
+            $view_species->execute();
+            $node->species_count = $view_species->total_rows;
+
+            //count meetings
+            $view_meetings = views_get_view('meetings');
+            $view_meetings->set_display('instrument_meetings');
+            $view_meetings->set_arguments(array($node->nid));
+            $view_meetings->execute();
+            $node->meetings_count = $view_meetings->total_rows;
+
+            //count projects
+            $view_projects = views_get_view('project_admin');
+            $view_projects->set_display('instrument_projects');
+            $view_projects->set_arguments(array($node->nid));
+            $view_projects->execute();
+            $node->projects_count = $view_projects->total_rows;
+
+            //count publications
+            $view_publications = views_get_view('publications_admin');
+            $view_publications->set_display('instrument_publications');
+            $view_publications->set_arguments(array($node->nid));
+            $view_publications->execute();
+            $node->publications_count = $view_publications->total_rows;
+
+            //count national reports
+            $view_national_reports = views_get_view('documents');
+            $view_national_reports->set_display('instrument_national_reports');
+            $view_national_reports->set_arguments(array($node->nid));
+            $view_national_reports->execute();
+            $node->national_reports_count = $view_national_reports->total_rows;
+
+            //count national reports
+            $view_plans = views_get_view('documents');
+            $view_plans->set_display('instrument_plans');
+            $view_plans->set_arguments(array($node->nid));
+            $view_plans->execute();
+            $node->plans_count = $view_plans->total_rows;
+
+            $node->ammap_data = CMSLegalInstrument::get_countries_for_ammap($node);
         }
     }
 }
@@ -466,5 +511,46 @@ class CMSLegalInstrument extends CMSBase {
         }
 
         return $cached_data;
+    }
+
+    /**
+     * Function used in template to get data for front-end species profile page
+     * @param $node
+     *
+     * @return array - $data returned should be used in template file by drupal_ammap_render_map() to render the map
+     * @author Dragos Dumitrescu
+     */
+    public static function get_countries_for_ammap($node) {
+        $view_countries = views_get_view('front_end_countries');
+        $view_countries->set_display('instrument_map');
+        $view_countries->set_arguments(array($node->nid));
+        $view_countries->execute();
+        $countries = $view_countries->result;
+        if (empty($countries)) {
+            return false;
+        }
+        foreach ($countries as $idx => $country) {
+            $legend = '';
+            if (isset($country->field_field_country_status[0])) {
+                $term = taxonomy_term_load($country->field_field_country_status[0]['raw']['tid']);
+                $legend = $term->name;
+            }
+            $date = '';
+            if (isset($country->field_field_country_ratification_date[0])) {
+                $date = date('Y', time($country->field_field_country_ratification_date[0]['raw']['value']));
+            }
+            $customData = (!empty($legend)) ? $legend : '';
+            $customData .= (!empty($date)) ? " since $date" : '';
+
+            $data []= array(
+                'title' => $country->node_title,
+                'iso2'  => $country->field_field_country_iso2[0]['raw']['value'],
+                'customData'  => $customData,
+                'legend' => $legend,
+                'url' => drupal_lookup_path('alias',"node/" . $country->nid),
+                'color' => ''
+            );
+        }
+        return $data;
     }
 }
