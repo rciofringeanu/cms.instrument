@@ -96,10 +96,10 @@ function cms_instrument_strongarm() {
           'weight' => '1',
         ),
         'domain_path' => array(
-          'weight' => '29',
+          'weight' => '30',
         ),
         'path' => array(
-          'weight' => '28',
+          'weight' => '29',
         ),
       ),
       'display' => array(
